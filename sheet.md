@@ -128,7 +128,15 @@ bool isTriproduct(int n) {
     return false;
 }
 ```
-
+### For Inputting a string seperated by spaces
+        ex: 1 1 2 2 3 4 5 5 
+        given n
+```cpp
+    std::cout << "Enter the sequence of integers:" << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cin >> sequence[i];
+    }
+```
 
 
 

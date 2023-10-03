@@ -86,6 +86,50 @@ try {
     // Handle MyException
 }
 ```
+## Examples
+
+### Multiples
+#### Print multiples of l and k up to n times
+```cpp
+#include <iostream>
+
+int main() {
+    int n, k, l;
+    // Input values
+    std::cout << "Enter n, k, and l: ";
+    std::cin >> n >> k >> l;
+    int count = 0;
+    int num = 1;
+    // Iterate through positive integers and print multiples of k, l, or both
+    while (count < n) {
+        if (num % k == 0 || num % l == 0) {
+            std::cout << num << " ";
+            count++;
+        }
+        num++;
+    }
+    return 0;
+}
+```
+### Triproduct
+#### Three consecutive integers multiply to n
+```cpp
+bool isTriproduct(int n) {
+    // Iterate through possible consecutive integer triples
+    for (int i = 1; i <= n / 3; i++) {
+        int product = i * (i + 1) * (i + 2);
+        if (product == n) {
+            return true;
+        }
+        if (product > n) {
+            break;  // No need to continue, as the product will only increase
+        }
+    }
+    return false;
+}
+```
+
+
 
 
 

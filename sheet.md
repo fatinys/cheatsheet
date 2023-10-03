@@ -78,6 +78,14 @@ if (errorCondition) {
     throw MyException("Something went wrong");
 }
 ```
+### Catching an Exception
+```cpp
+try {
+    // Code that may throw an exception
+} catch (MyException& e) {
+    // Handle MyException
+}
+```
 
 
 

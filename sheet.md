@@ -86,6 +86,41 @@ try {
     // Handle MyException
 }
 ```
+### String to Number
+```cpp
+       unsigned int number = digit - '0';
+       return number;
+```
+or
+```cpp
+    int num = std::stoi(str);
+```
+### Number to String
+```cpp
+        char chardig = '0' + decimal;
+        return chardig;
+```
+or
+```cpp
+    std::string strNum = std::to_string(num);
+```
+### Find Substring
+```cpp
+size_t found = str.find(subStr);
+if (found != std::string::npos) {
+    // Substring found at 'found' index
+}
+```
+### Character Classification
+```cpp
+isalpha(int c)// Checks if c is an alphabetic character.
+isdigit(int c)// Checks if c is a digit.
+isalnum(int c)// Checks if c is alphanumeric (letter or digit).
+isupper(int c)// Checks if c is an uppercase letter.
+islower(int c)// Checks if c is a lowercase letter.
+isspace(int c)// Checks if c is whitespace.
+```
+
 ## Examples
 
 ### Multiples
@@ -227,16 +262,17 @@ int main() {
     }
 }
 ```
-### String to Number
+### Prime numbers
 ```cpp
-       unsigned int number = digit - '0';
-       return number;
+bool isPrime = true;
+for (int i = 2; i <= num / 2; ++i) {
+    if (num % i == 0) {
+        isPrime = false;
+        break;
+    }
+}
 ```
-### Number to String
-```cpp
-        char chardig = '0' + decimal;
-        return chardig;
-```
+
 
 | A | B | A AND B |
 |---|---|---------|

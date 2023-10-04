@@ -128,14 +128,61 @@ bool isTriproduct(int n) {
     return false;
 }
 ```
-### For Inputting a string seperated by spaces
-        ex: 1 1 2 2 3 4 5 5 
-        given n
+### Finding distinct sums equalling to k of two numbers in n long sequence
 ```cpp
-    std::cout << "Enter the sequence of integers:" << std::endl;
-    for (int i = 0; i < n; i++) {
-        std::cin >> sequence[i];
+int main() {
+
+    int n;
+    int k;
+    cout << "Enter n: ";
+    cin >> n;
+    cout << "Now enter n number of letters: ";
+
+    int array1[n];
+
+
+    for (int i = 0; i<n; i++){
+        cin >> array1[i];
     }
+
+    cout << "Now enter k target: ";
+    cin >> k;
+
+    for (int j = 0; j<n; j++){
+        for (int b = j+1; b<n; b++){
+            if(array1[j]+array1[b]==k){
+                cout << array1[j] << array1[b] << endl;
+            }
+        }
+    }
+    return 0;
+}
+```
+
+### Numeric Palindrome
+```cpp
+int main() {
+
+    int num;
+    int reversenum = 0;
+
+    cout << "Enter num: ";
+    cin >> num;
+    int numcopy = num;
+
+    while (num>0){
+        int digit = num%10;
+        reversenum = reversenum*10 + digit;
+        num = num/10;
+    }
+    if (reversenum == numcopy){
+
+        cout << "Yup" << endl;
+
+    } else{
+        cout << "Nope" << endl;
+    } 
+}
 ```
 
 

@@ -184,6 +184,60 @@ int main() {
     } 
 }
 ```
+### Input Stream Example
+```cpp
+#include <iostream>
+#include <string>
+#include <limits>
+#include <sstream>
+#include "./string_calculator.h"
+
+using namespace std;
+
+int main() {
+    cout << "String Calculator" << endl;
+    cout << "\"q\" or \"quit\" or ctrl+d to exit" << endl;
+
+    string input;
+    while (true) {
+        if (!getline(cin, input)) {
+            break;
+        }
+        if (input == "q" || input == "quit") {
+            cout << ">>" << endl;
+            cout << "farvel!";
+            
+            break;
+        }
+        string leftop, rightop;
+        char oper;
+        istringstream input_stream(input);
+        while (input_stream >> leftop >> oper >> rightop) {
+            if (oper == '+') {
+
+                string answer = add(leftop, rightop);
+                cout << ">>" << endl;
+                cout << "ans =" << endl;
+                cout << endl;
+                cout << "    " << answer <<endl;
+                cout << endl;
+
+            }
+        }
+    }
+}
+```
+### String to Number
+```cpp
+       unsigned int number = digit - '0';
+       return number;
+```
+### Number to String
+```cpp
+        char chardig = '0' + decimal;
+        return chardig;
+```
+
 | A | B | A AND B |
 |---|---|---------|
 | 0 | 0 |   0     |
